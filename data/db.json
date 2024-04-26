@@ -1,0 +1,96 @@
+{
+  "actors": [
+    {
+      "id": 1,
+      "name": "Mark Hamill",
+      "yearOfBirth": 1951,
+      "films": [ "Star Wars" ]
+    },
+    {
+      "id": 2,
+      "name": "Harrison Ford",
+      "yearOfBirth": 1942,
+      "films": [ "Star Wars", "Raiders of the Lost Ark" ]
+    },
+    {
+      "id": 3,
+      "name": "Carrie Fisher",
+      "yearOfBirth": 1956,
+      "films": [ "Star Wars" ]
+    },
+    {
+      "id": 4,
+      "name": "Tom Hanks",
+      "yearOfBirth": 1956,
+      "films": [ "Toy Story", "Forrest Gump" ]
+    },
+    {
+      "id": 5,
+      "name": "Jack Black",
+      "yearOfBirth": 1969,
+      "films": [ "Kung Fu Panda", "The Super Mario Bros. Movie" ]
+    },
+    {
+      "id": 6,
+      "name": "Keanu Reeves",
+      "yearOfBirth": 1964,
+      "films": [ "The Matrix", "Speed" ]
+    },
+    {
+      "id": 7,
+      "name": "Tom Holland",
+      "yearOfBirth": 1997,
+      "films": []
+    }
+  ],
+  "films": [
+    {
+      "id": 1,
+      "title": "Star Wars",
+      "year": 1977,
+      "actors": [ "Mark Hamill", "Harrison Ford", "Carrie Fisher" ]
+    },
+    {
+      "id": 2,
+      "title": "Toy Story",
+      "year": 1995,
+      "actors": [ "Tom Hanks", "Tim Allen", "Don Rickles" ]
+    },
+    {
+      "id": 3,
+      "title": "Kung Fu Panda",
+      "year": 2008,
+      "actors": [ "Jack Black", "Dustin Hoffman", "Angelina Jolie" ]
+    },
+    {
+      "id": 4,
+      "title": "The Matrix",
+      "year": 1999,
+      "actors": [ "Keanu Reeves", "Laurence Fishburne", "Carrie-Anne Moss" ]
+    },
+    {
+      "id": 5,
+      "title": "Raiders of the Lost Ark",
+      "year": 1981,
+      "actors": [ "Harrison Ford", "Karen Allen", "Paul Freeman" ]
+    },
+    {
+      "id": 6,
+      "title": "Forrest Gump",
+      "year": 1994,
+      "actors": [ "Tom Hanks", "Robin Wright", "Gary Sinise" ]
+    },
+    {
+      "id": 7,
+      "title": "The Super Mario Bros. Movie",
+      "year": 2023,
+      "actors": [ "Chris Pratt", "Anya Taylor-Joy", "Charlie Day", "Jack Black" ]
+    },
+    {
+      "id": 8,
+      "title": "Speed",
+      "year": 1994,
+      "actors": [ "Keanu Reeves", "Dennis Hopper", "Sandra Bullock" ]
+    }
+  ]
+}
