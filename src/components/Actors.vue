@@ -81,7 +81,7 @@ export default {
       this.showError = false;
     },
     submitForm() {
-      if (this.title === "" || this.year === "" || this.year === 0) {
+      if (this.name === "" || this.year === "" || this.year === 0) {
         this.showError = true;
         return;
       }
@@ -91,7 +91,7 @@ export default {
         "id": newId,
         "name": this.name,
         "year": this.year,
-        "actors": []
+        "films": []
       };
       this.title = "";
       this.year = "";

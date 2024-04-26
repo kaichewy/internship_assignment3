@@ -51,7 +51,7 @@
                     <form class="selectionForm">
                         <select v-model="selectedFilm">
                           <option class="selectActor" value="null"><span>Select Film</span></option>
-                          <option v-for="film in actorlessFilms" :value="film">{{film.name}}</option>
+                          <option v-for="film in actorlessFilms" :value="film">{{film.title}}</option>
                         </select>
                         <div class="submit">
                             <button type="submit" @click.prevent="submitForm" class="apply">Apply</button>
@@ -89,10 +89,7 @@ export default {
   },
   props: ['id'],
   computed: {
-    actorlessFilms() {
-      if (!this.actor) return [];
-      this.actorlessFilms = this.allFilms.filter(film => !film.actors.includes(this.actor.name));
-    }
+
   },
   mounted() {
     fetch('http://localhost:3000/actors/' + this.id)
@@ -107,6 +104,9 @@ export default {
       .then(res => res.json())
       .then(data => {
         this.allFilms = data;
+        this.actorlessFilms = data.filter(film => {
+          return !film.actors.includes(this.actor.name);
+        });
       })
       .catch(err => console.log(err.message));
   },
@@ -129,6 +129,9 @@ export default {
       if (index !== -1) {
         this.allFilms[index].actors.push(this.actor.name);
       }
+      const indexToRemove = this.actorlessFilms.findIndex(film => film.title === this.selectedFilm.title);
+      this.actorlessFilms.splice(indexToRemove, 1);
+
       this.selectedFilm = null;
       this.showActorForm = false;
       this.showError = false;
@@ -141,6 +144,7 @@ export default {
     const film = this.actor.films.indexOf(filmToRemove)
     this.actor.films.splice(film, 1);
     this.filmToRemove = null;
+    this.actorlessFilms.push(this.allFilms[this.allFilms.findIndex(film=>filmToRemove===film.title)])
     },
 
     cancelRemove() {

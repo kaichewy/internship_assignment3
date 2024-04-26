@@ -156,13 +156,9 @@ export default {
             this.film.actors.splice(index, 1)
             for (let i=0; i<this.allActors.length; i++) {
               if (this.allActors[i].name === actor) {
-                for (let j = 0; j<this.allActors[i].films.length; j++) {
-                    let j = this.allActors[i].films.indexOf(this.film.name)
-                    this.allActors[i].films.splice(j, 1)
-                    if (this.allActors[i].films.length===0) {
-                      this.filmlessActors.push(this.allActors[i])
-                    }
-                }
+                  let j = this.allActors[i].films.indexOf(this.film.name)
+                  this.allActors[i].films.splice(j, 1)
+                  this.filmlessActors.push(this.allActors[i])
               }
             }
         },
@@ -183,7 +179,7 @@ export default {
       .then(data => {
         this.allActors = data
         this.filmlessActors = this.allActors.filter((actor)=> {
-          if (actor.films.length === 0) {
+          if (!actor.films.includes(this.film.title)) {
             return actor
           }
         })
